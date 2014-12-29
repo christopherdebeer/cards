@@ -25,19 +25,26 @@ $white-bg-uri: url("data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAA
 
 
 .card {
-  position: relative;
+  position: absolute;
+  display: block;
   font-size: 10px;
   width: 300px;
-  margin: 0 auto;
+  margin: 0;
   padding: 1em;
   border: $standard-padding solid black;
   border-radius: $text-padding;
   background: top left transparent;
   background-size: cover;
-  box-shadow: 0px (0px-$standard-border-width) rgba(255, 255, 255, 1), 0px 0px $standard-padding rgba( 0,0,0,0.5 );
+  box-shadow: 0px (0-$standard-border-width) rgba(255, 255, 255, 0.25), 0px 0px $standard-padding rgba( 0,0,0,0.5 );
   text-shadow: 0px $standard-border-width 0px $highlight-color;
   background-color: rgb(216, 216, 216);
   overflow: auto;
+  left: 50%;
+  margin-left: -150px;
+
+  &:nth-child(-n+1) {
+    transform: translate3d(2px,2px,0);
+  }
 
   &.white {
     background-image:  $white-bg-uri;

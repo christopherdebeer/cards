@@ -11,11 +11,12 @@ viewDeps =
 	Marionette: Marionette
 
 
-CardView = require( './views/CardView.coffee')( viewDeps )
 
+CardCollectionView = require( './views/CardCollectionView.coffee')( viewDeps )
 
 
 $ ->
+	require( './views/AppView.scss' )
 	region = new Marionette.Region( el: $('#app')[0] )
-	view = new CardView()
+	view = new CardCollectionView( collection: new Backbone.Collection( [{}, {}] ) )
 	region.show( view )
