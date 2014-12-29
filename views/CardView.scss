@@ -41,6 +41,7 @@ $white-bg-uri: url("data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAA
   overflow: auto;
   left: 50%;
   margin-left: -150px;
+  text-align: left;
 
   &:nth-child(-n+1) {
     transform: translate3d(2px,2px,0);
