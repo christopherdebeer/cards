@@ -2,78 +2,10 @@
 <html>
 	<head>
 		<title>Cards</title>
-		<style>
-			.card {
-				font-size: 10px;
-				width: 300px;
-				margin: 0 auto;
-				padding: 1em;
-				border: 10px solid black;
-				border-radius: 5px;
-				background: url("http://russiaeasternrepublic.files.wordpress.com/2014/01/white-leather-texture2.jpg") top left transparent;
-				background-size: cover;
-
-			}
-
-			.title {
-				font-size: 20px;
-				margin: 0;
-				line-height: 25px;
-				text-shadow: 0px -2px 0px white;
-			}
-			.image {
-				display: block;
-				width: 100%;
-				margin-bottom: 1em;
-				border: 1px solid #333;
-				box-shadow: 0 -1px 1px #333;
-			}
-			.tags {
-				overflow: auto;
-				font-size: 14px;
-			}
-			.tags .primary {
-				float: right;
-			}
-			.tags .secondary,
-			.tags .tertiary {
-				float: left;
-				margin-right: 1em;
-			}
-
-			.tags .tertiary:before {
-				content: "-";
-				margin-right: 0.6em;
-			}
-
-			.description {
-				font-size: 16px;
-			}
-
-		</style>
+		<link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
 	<body>
-		<div class="card">
-			<h1 class="title">Lucy</h1>
-			<img class="image" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShmmE5rWhBmdfRL4XOeqVTJkqaVfh6jw6y3KBk9wfv-J-EUXPJEA" alt="Title Card Image">
-			<div class="tags">
-				<div class="primary">A</div>
-				<div class="secondary">FILM</div>
-				<div class="tertiary">Action Sci-Fi</div>
-			</div>
-			<div class="description">
-				<p>A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.</p>
-			</div>
-			<div class="hash">Da2434sDGA4234s3Y£H$66WKDS</div>
-
-			<div class="stats">
-				<div class="seeds">3k</div>
-				<div class="rating">6.4</div>
-			</div>
-
-			<div class="signed">SDLAJHDKAS</div>
-			<div class="artist">Luc Besson</div>
-		</div>
+		<div id="app"></div>
 		<script src="build/app.js"></script>
 	</body>
 </html>

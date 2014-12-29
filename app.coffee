@@ -1,7 +1,8 @@
-$ = require('jquery')
 _ = require('underscore')
 Backbone = require('backbone')
+Backbone.$ = $ = require('jquery')
 Marionette = require('backbone.marionette')
+Marionette.$ = Backbone.$
 
 viewDeps =
 	$: $
@@ -14,4 +15,7 @@ CardView = require( './views/CardView.coffee')( viewDeps )
 
 
 
-$ -> new CardView( el: $( '#app' ) )
+$ ->
+	region = new Marionette.Region( el: $('#app')[0] )
+	view = new CardView()
+	region.show( view )

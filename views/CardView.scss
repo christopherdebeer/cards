@@ -1,0 +1,193 @@
+$light-bg: rgb(240, 240, 240);
+$dark-bg: rgb(115, 115, 115);
+
+$text-color: black;
+$highlight-color: white;
+
+
+$standard-padding: 10px;
+$text-padding: 5px;
+
+$badge-radius: 1em;
+
+$standard-border-width: 1px;
+
+%bevel {
+  border: 2px solid $highlight-color;
+  box-shadow: 1px 1px 1px -1px $dark-bg;
+  border-left-color: $dark-bg;
+  border-top-color: $dark-bg;
+}
+
+
+.card {
+  position: relative;
+  font-size: 10px;
+  width: 300px;
+  margin: 0 auto;
+  padding: 1em;
+  border: $standard-padding solid black;
+  border-radius: $text-padding;
+  background: url("http://russiaeasternrepublic.files.wordpress.com/2014/01/white-leather-texture2.jpg") top left transparent;
+  background-size: cover;
+  box-shadow: 0px (0px-$standard-border-width) rgba(255, 255, 255, 1), 0px 0px $standard-padding rgba( 0,0,0,0.5 );
+  text-shadow: 0px $standard-border-width 0px white;
+  background-color: rgb(216, 216, 216);
+  overflow: auto;
+
+  .title {
+    font-size: 20px;
+    margin: 0;
+    line-height: 18px;
+    padding: 0 $text-padding;
+    text-shadow: 0px -2px 0px white, 0px 1px rgba(0, 0, 0, 0.25);
+    margin-bottom: $standard-padding;
+  }
+
+
+
+  .rating {
+    float: right;
+    font-size: 14px;
+    border-radius: $badge-radius;
+    border: $standard-border-width solid black;
+    padding: 0 0.4em;
+    right: $standard-padding;
+    background-color: white;
+    z-index: 999;
+    line-height: 17px;
+    background-color: $light-bg;
+    font-weight: bold;
+    box-shadow: 0px -2px 0px white, 0px $standard-border-width rgba(0, 0, 0, 0.25);
+    right: $text-padding;
+    border-color: $dark-bg;
+    border-left-width: 0;
+
+    &.over-above {
+      position: relative;
+      margin-top: -1em;
+      margin-bottom: $standard-padding;
+    }
+
+    i.fa {
+      font-size: 10px;
+      line-height: 14px;
+    }
+
+  }
+
+  .rating-set {
+    .rating {
+      border-radius: 0;
+
+      &:last-child {
+        border-bottom-left-radius: $badge-radius;
+        border-top-left-radius: $badge-radius;
+        border-left-width: 1px;
+      }
+      &:nth-child(-n+1) {
+        border-bottom-right-radius: $badge-radius;
+        border-top-right-radius: $badge-radius;
+        border-left-width: 0;
+      }
+
+    } 
+  }
+
+  .image {
+    position: relative;
+    margin-bottom: 1em;
+    padding-bottom: 75%;
+    overflow: hidden;
+    height: 0;
+    @extend %bevel;
+    
+
+    img {
+      display: block;
+      width: 100%;
+      position: absolute;
+      margin-top: -50%;
+      top: 50%;
+    }
+  }
+
+  .tags {
+    overflow: auto;
+    font-size: 14px;
+    padding: 0 $text-padding;
+    font-style: italic;
+    font-weight: bold;
+
+    a {
+      color: inherit;
+    }
+
+    .primary {
+      float: right;
+      font-family: monospace;
+      font-style: normal;
+      // text-shadow: 0px $standard-border-width 0px white, 0 0 5px rgb(255, 172, 0);
+    }
+
+    .secondary,
+    .tag {
+      float: left;
+      
+      &:before {
+        content: "";
+        margin-right: 0;
+      }
+      &.secondary:before {
+        content: "";
+        margin-right: 0;
+      }
+      &.secondary:after {
+        content: "\2014";
+        margin-left: $text-padding;
+        margin-right: $text-padding;
+      }
+    }
+
+    .tag ~ .tag {
+      &:before {
+        content: ",";
+        margin-right: $text-padding;
+      }
+    }
+
+
+    
+  }
+
+  .description {
+    font-size: 16px;
+    padding: $text-padding;
+    background-color: rgba( $light-bg, 0.5 );
+    margin: 0.4em 0;
+    min-height: 8em;
+    @extend %bevel;
+
+    > *:first-child {
+      margin-top: 0;
+    }
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .foot {
+    clear: both;
+
+    .artist, 
+    .hash {
+      line-height: 10px;
+      vertical-align: baseline;
+      display: inline-block;
+    }
+    .hash {
+      font-size: 8px;
+      float: right;
+    }
+  }
+}
