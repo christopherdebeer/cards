@@ -1,0 +1,2 @@
+cards.datagotchi.com
+====================
