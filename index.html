@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Cards</title>
+		<style>
+			.card {
+				width: 300px;
+				margin: 0 auto;
+				padding: 1em;
+				border: 0.5em solid black;
+				font-size: 10px;
+			}
+			.image {
+				display: block;
+				width: 100%;
+				margin-bottom: 1em;
+			}
+			.tags {
+				overflow: auto;
+			}
+			.tags .primary {
+				float: right;
+			}
+			.tags .secondary,
+			.tags .tertiary {
+				float: left;
+				margin-right: 1em;
+			}
+
+			.tags .tertiary:before {
+				content: "-";
+				margin-right: 0.6em;
+			}
+
+			.description {
+				font-size: 14px;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="card">
+			<h1 class="title">Lucy</h1>
+			<img class="image" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcShmmE5rWhBmdfRL4XOeqVTJkqaVfh6jw6y3KBk9wfv-J-EUXPJEA" alt="Title Card Image">
+			<div class="tags">
+				<div class="primary">A</div>
+				<div class="secondary">FILM</div>
+				<div class="tertiary">Action Sci-Fi</div>
+			</div>
+			<div class="description">
+				<p>A woman, accidentally caught in a dark deal, turns the tables on her captors and transforms into a merciless warrior evolved beyond human logic.</p>
+			</div>
+			<div class="hash">Da2434sDGA4234s3Y£H$66WKDS</div>
+
+			<div class="stats">
+				<div class="seeds">3k</div>
+				<div class="rating">6.4</div>
+			</div>
+
+			<div class="signed">SDLAJHDKAS</div>
+			<div class="artist">Luc Besson</div>
+		</div>
+		<script src="build/app.js"></script>
+	</body>
+</html>
