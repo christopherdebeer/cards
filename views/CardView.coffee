@@ -3,7 +3,9 @@ module.exports = ( { Marionette, _ } ) ->
 	require( './CardView.scss' )
 
 	class CardView extends Marionette.ItemView
-		className: => "card #{ @model.get('color') }"
+		className: => "card #{ @model.get('color') } #{ @model.get('set') } #{ @model.get('type') }"
+		attributes:
+			draggable: true
 		template: _.template """
 			<div class="rating">
 				<% for (r in stats.cost) { %>
@@ -54,6 +56,56 @@ module.exports = ( { Marionette, _ } ) ->
 				<span class="hash">#: <%= data_hash %></span>
 			</div>
 		"""
+		
+		events: 
+			'dragstart': '_handleDragStart'
+			'dragend': '_handleDragEnd'
+			'dragenter': '_handleDragEnter'
+			'dragover': '_handleDragOver'
+			'dragleave': '_handleDragLeave'
+			'click': '_handleClick'
+		
 		initialize: ->
+
+		deselect: ->
+			@$el.removeClass( 'dropping' )
+			@$el.removeClass( 'selected' )
+
+		select: ->
+			@$el.removeClass( 'dropping' )
+			@$el.addClass( 'selected' ) 
+
+		_handleClick: (e) =>
+			@$el.removeClass( 'dropping' )
+			@trigger( 'selected', @$el.hasClass( 'selected') )
+
+		_handleDragLeave: =>
+			@$el.removeClass( 'dropping' )
+
+		_handleDragOver: (e) =>
+			@$el.addClass( 'dropping' )
+			e.preventDefault()
+			false
+
+		_handleDragEnter: =>
+			@$el.addClass( 'dropping' )
+
+		_handleDragEnd: =>
+			@$el.removeClass( 'dragging' )
+			@stopListening( @$el, 'mousemove', @_handleDragMove )
+
+		_handleDragStart: (ev) =>
+			console.log ev
+			style = window.getComputedStyle(ev.target, null)
+			ev.originalEvent.dataTransfer.setData( "text/plain",
+			(parseInt(style.getPropertyValue("left"),10) - ev.clientX) + ',' + (parseInt(style.getPropertyValue("top"),10) - ev.clientY))
+			@$el.addClass( 'dragging' )
+			console.log 'start drag'
+		_handleDragMove: (ev) =>
+			console.log arguments
+			@$el.css
+				left: ev.clientX
+				top: ev.clientY
+
 
 

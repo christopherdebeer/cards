@@ -12,7 +12,10 @@ module.exports = ({@Backbone}) ->
 			CUSTOM: 'paint-brush'
 			MAGNET: 'magnet'
 			TECH: 'plug'
+			PERSON: 'user'
 		@TYPE =
+			AVATAR: 'Avatar'
+			ARTIFACT: 'Artifact'
 			MOVIE: 'Movie'
 			TV_SERIES: 'TV Series'
 			PROTOCOL: 'Protocol'

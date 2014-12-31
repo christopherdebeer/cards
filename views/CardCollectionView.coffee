@@ -7,3 +7,12 @@ module.exports = (viewDeps) ->
 	class CardCollectionView extends Marionette.CollectionView
 		className: 'card-collection-view'
 		childView: CardView
+		childEvents:
+			'selected': '_selectedChild'
+
+		_selectedChild: (view, selected) =>
+			@children.each (view) -> view.deselect()
+			if selected
+				view.deselect()
+			else
+				view.select()
