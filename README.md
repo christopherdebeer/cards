@@ -1,2 +1,2 @@
-cards.datagotchi.com
-====================
+cards
+=====
